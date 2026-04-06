@@ -1,0 +1,1 @@
+simin=mod(round(10*rand(1,100)),4);
