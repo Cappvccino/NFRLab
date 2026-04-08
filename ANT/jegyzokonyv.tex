@@ -19,7 +19,7 @@
 
 \newcommand{\parrtp}{\left(r,\vartheta,\varphi\right)}
 \newcommand{\partp}{\left(\vartheta,\varphi\right)}
-
+\newcommand{\hpbw}{\Phi_\mathrm{3dB}}
 \begin{document}
 
 \maketitle
@@ -67,7 +67,11 @@ A gyakorlatban a komplex vektor iránykarakterisztika nehéz kezelhetősége mia
 \end{description}
 \section{A mérés}
 \subsection{A mérés menete}
-A mérés során egy tölcsérantenna párt helyeztünk el a reflexiómentes szobában (lásd.: \ref{sec:norefl}.~fejezet). A vevőt a szobában fixen rögzítve, abból a vett jelet a szobán kívülre vezetve tudtuk rögzíteni a mérés eredményeit. Az adót egy 360 fokban motorosan körbeforgatható állványra illesztettük. Különböző frekvenciákon (8, 10 és 12 GHz) adva és az antennát megforgatva kirajzolódnak \aref{fig:antH}. és \ref{fig:antE}.~ábrán látható iránykarakterisztikák. Az eltérő frekvencia mellett -- az antennákat hosszmenti tengelyük körül derékszögben elfordítva -- külön $E$- és $H$-síkú valamint keresztpolarizációs iránykarakterisztikát (lásd.: \ref{fig:xpol}.~ábra) is mértünk.
+A mérés során egy tölcsérantenna párt helyeztünk el a reflexiómentes szobában (lásd.: \ref{sec:norefl}.~fejezet). A vevőt a szobában fixen rögzítve, abból a vett jelet a szobán kívülre vezetve tudtuk rögzíteni a mérés eredményeit. Az adót egy 360 fokban motorosan körbeforgatható állványra illesztettük. Különböző frekvenciákon (8, 10 és 12 GHz) adva és az antennát megforgatva kirajzolódnak \aref{fig:antH}. és \ref{fig:antE}.~ábrán látható iránykarakterisztikák. Az eltérő frekvencia mellett -- az antennákat hosszmenti tengelyük körül derékszögben elfordítva -- külön $E$- és $H$-síkú, valamint keresztpolarizációs iránykarakterisztikát (lásd.: \ref{fig:xpol}.~ábra) is mértünk.
+
+Az adatok feldolgozása során ügyeltünk arra, hogy az antennaforgató hibájának kiküszöbölése végett a főnyaláb csúcsát utólag a zérus szöghöz rendeljük, mivel ez egy elvárható jellemzője a mérési elrendezésnek.
+
+Továbbá, az iránydiagramokon feltűntettük a $\hpbw$ 3 dB-es irányélességi szöghöz tartozó tartományt is. Az erre és a főnyaláb csúcsteljesítményére vonatkozó mérési eredmények \aref{tab:hpbw_peak}.~táblázatban találhatók.
 \subsection{Helyszín}
 \label{sec:norefl}
 A távoltéri iránykarakterisztika méréséhez szükséges akadálymentes szabad teret nehezen
@@ -79,6 +83,22 @@ A reflexiómentesítő anyagok működése azon alapul, hogy belépő felületü
 A zavaró reflexiókat természetesen nem tudjuk zérusra, csak egy alkalmas szint alá csökkenteni. A mérőtér azon részét, ahol ez teljesül csendes zónának nevezik.
 
 \section{Mérési eredmények}
+\begin{table}[htb]
+	\centering{}
+	\begin{tabular}{|c|c|c||c|c|c|}
+		\hline
+		\textbf{$\mathbf H$-sík} & & & \textbf{$\mathbf E$-sík} & &\\
+		$f$ (GHz) & $P_\text{max}$ (dB)& $\hpbw$ ($^\circ$)  &
+		$f$ (GHz) & $P_\text{max}$ (dB)& $\hpbw$ ($^\circ$) \\
+		\hline
+		8	&	-25.27	&	23.81 & 8	&	-25.02 & 23.81\\
+		10	&	-26.48	&	19.48 & 10	&	-26.32 & 20.20\\
+		12	&	-27.43	&	16.59 & 12	&	-26.97 & 17.31\\
+		\hline
+	\end{tabular}
+	\caption{Az egyes frekvenciák mellett mért 3 dB-es irányélességi szögek és csúcsteljesítmények a két vizsgált polarizáció mellett.}
+	\label{tab:hpbw_peak}
+\end{table}
 \begin{figure}[hbtp]
      \centering
      % --- First Row ---
@@ -127,12 +147,8 @@ A zavaró reflexiókat természetesen nem tudjuk zérusra, csak egy alkalmas szi
 \end{figure}
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\textwidth]{gen_abrak/Antenna_Phase_Plot_100.pdf}
-	\caption{}
-\end{figure}
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\textwidth]{gen_abrak/Antenna_Phase_Plot_101.pdf}
-	\caption{}
+	\includegraphics[width=0.7\textwidth]{gen_abrak/csillapitas}
+	\caption{Az átvitel csillapítása a frekvecnia függvényében}
+	\label{fig:attenuation}
 \end{figure}
 \end{document}
